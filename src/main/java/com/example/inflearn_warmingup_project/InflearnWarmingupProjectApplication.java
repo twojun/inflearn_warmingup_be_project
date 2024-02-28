@@ -9,5 +9,4 @@ public class InflearnWarmingupProjectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(InflearnWarmingupProjectApplication.class, args);
 	}
-
 }
