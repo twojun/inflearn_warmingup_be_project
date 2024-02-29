@@ -21,7 +21,7 @@ public class AttendanceService {
     private final UserRepository userRepository;
 
     public void getUserAttendance(Long id, LocalDate date) {
-        attendanceRepository.getUserAttendanceList(id, date)
+
     }
 
     @Transactional

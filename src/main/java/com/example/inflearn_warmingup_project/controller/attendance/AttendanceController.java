@@ -17,11 +17,11 @@ public class AttendanceController {
 
     private final AttendanceService attendanceService;
 
-    @GetMapping("/api/attend/{id}/{date}")
-    public List<UserAttendanceListDto> getUserAttendance(@PathVariable(name = "id") Long id,
-                                                         @PathVariable(name = "date") LocalDate date) {
-        attendanceService.getUserAttendance(id, date);
-    }
+//    @GetMapping("/api/attend/{id}/{date}")
+//    public List<UserAttendanceListDto> getUserAttendance(@PathVariable(name = "id") Long id,
+//                                                         @PathVariable(name = "date") LocalDate date) {
+//        attendanceService.getUserAttendance(id, date);
+//    }
 
     @PostMapping("/api/attend/check-in/{id}")
     public void checkIn(@PathVariable(name = "id") long id, @RequestBody CreateCheckInRequestDto requestDto) {
