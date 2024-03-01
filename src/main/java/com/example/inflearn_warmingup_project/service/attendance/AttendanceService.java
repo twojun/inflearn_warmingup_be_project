@@ -4,6 +4,7 @@ import com.example.inflearn_warmingup_project.domain.attendance.Attendance;
 import com.example.inflearn_warmingup_project.domain.user.User;
 import com.example.inflearn_warmingup_project.dto.attendance.request.CreateCheckInRequestDto;
 import com.example.inflearn_warmingup_project.dto.attendance.request.CreateCheckOutRequestDto;
+import com.example.inflearn_warmingup_project.dto.attendance.response.UserAttendanceListDto;
 import com.example.inflearn_warmingup_project.repository.attendance.AttendanceRepository;
 import com.example.inflearn_warmingup_project.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +12,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
+import java.time.Year;
+import java.time.YearMonth;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -20,8 +25,10 @@ public class AttendanceService {
     private final AttendanceRepository attendanceRepository;
     private final UserRepository userRepository;
 
-    public void getUserAttendance(Long id, LocalDate date) {
-
+    public List<UserAttendanceListDto> getUserAttendance(Long id, int year, int month) {
+        return attendanceRepository.getUserAttendanceList(id, year, month).stream()
+                .map(list -> new UserAttendanceListDto())
+                .collect(Collectors.toList());
     }
 
     @Transactional
