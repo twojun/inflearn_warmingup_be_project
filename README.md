@@ -1,9 +1,11 @@
-# Inflearn Warming-up Club Back-end Mini Project Summary
+# Inflearn Warming-up Club Back-end Mini Project Summary 
 
+## 1. 진행 상황 </br>
 P1 ✅ (완료)</br>
 P2 ❌✅❌✅❌✅ ( ...... 진행 중 ) </br>
 P3 ❌✅❌✅❌✅ ( ...... 진행 중 )  </br>
-P4 ❌ </br>
+P4 ❌ </br></br></br>
+
 
 
 ## P1. 팀, 직원 등록 & 조회
@@ -39,8 +41,12 @@ P4 ❌ </br>
 
 
 
-## P2. 팀, 직원 등록 & 조회
-### 2-1. Code </br></br></br>
+## P2. 출/퇴근 등록 & 월 근무시간 조회 
+### 2-1. Code 
+- [Attendance]()
+- [AttendanceController]()
+- [AttendanceService]()
+- [AttendanceRepository]()
 
 
 ### 2-2. 테스트  </br></br></br></br></br></br>
@@ -48,11 +54,16 @@ P4 ❌ </br>
 
 
 
-## P3. 출/퇴근 등록 & 월별 근무시간 조회 
+## P3. 연차 등록 / 월 근무시간 조회 (연차를 사용했다면 연차정보 반영되어야 함)
 ### 3-1. Code </br></br>
+(1) 특정 직원 연차 조회</br>
+<img width="674" alt="image" src="https://github.com/twojun/inflearn_warmingup_be_project/assets/118627166/c00f0af1-4226-4cc1-a0a2-09323e8db096"></br></br>
+
 
 
 ### 3-2. 테스트 </br></br></br></br></br></br>
+(1) 올해 입사자의 연차 등록</br>
+![image](https://github.com/twojun/inflearn_warmingup_be_project/assets/118627166/522374ed-7c4e-4467-89dc-877c25ede543) </br></br></br></br></br>
 
 
 
