@@ -23,5 +23,4 @@ public class UserController {
     public List<UserGetResponseDto> getAllUsers() {
         return userService.getAllUsers();
     }
-
 }

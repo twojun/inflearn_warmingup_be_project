@@ -1,6 +1,7 @@
 package com.example.inflearn_warmingup_project.domain.attendance;
 
 import com.example.inflearn_warmingup_project.domain.user.User;
+import com.example.inflearn_warmingup_project.domain.vacation.Vacation;
 import com.example.inflearn_warmingup_project.dto.attendance.request.CreateCheckInRequestDto;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -44,5 +45,10 @@ public class Attendance {
     public void changeAttendStatus(Integer sumMinutes) {
         this.isStatus = false;
         this.sumMinutes = sumMinutes;
+    }
+
+    // 연차 사용
+    public void setWorkingMinutesWithAnnualDay(LocalDate assignAnnualDay) {
+        workingMinutes = 0;
     }
 }

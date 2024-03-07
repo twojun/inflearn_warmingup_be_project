@@ -11,9 +11,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
-import java.time.Year;
-import java.time.YearMonth;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,9 +22,13 @@ public class AttendanceService {
     private final AttendanceRepository attendanceRepository;
     private final UserRepository userRepository;
 
-    public List<UserAttendanceListDto> getUserAttendance(Long id, int year, int month) {
-        return attendanceRepository.getUserAttendanceList(id, year, month).stream()
-                .map(list -> new UserAttendanceListDto())
+    public List<UserAttendanceListDto> getUserAttendance(Long id, Integer year, Integer month) {
+        User findUser = userRepository.findById(id)
+                .orElseThrow(() -> new IllegalStateException("존재하지 않는 직원에 대해서는 조회할 수 없습니다."));
+
+        Integer allWorkingMinutes = attendanceRepository.calculateWorkingMinutes(findUser.getId());
+        return attendanceRepository.getUserAttendanceList(findUser.getId(), year, month).stream()
+                .map(list -> new UserAttendanceListDto(list, allWorkingMinutes))
                 .collect(Collectors.toList());
     }
 

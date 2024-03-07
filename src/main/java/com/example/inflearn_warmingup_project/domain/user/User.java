@@ -1,6 +1,7 @@
 package com.example.inflearn_warmingup_project.domain.user;
 
 import com.example.inflearn_warmingup_project.domain.team.Team;
+import com.example.inflearn_warmingup_project.domain.vacation.Vacation;
 import com.example.inflearn_warmingup_project.dto.user.request.UserCreateRequestDto;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -18,6 +19,9 @@ public class User {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id")
     private Team team;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Vacation vacation;
 
     private String name;
     private String teamName;
